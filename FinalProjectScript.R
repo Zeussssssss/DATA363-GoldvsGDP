@@ -97,3 +97,9 @@ cor(GDPData$Gross.domestic.product,
 lmo <-
   lm(GoldRate.df$daily_rate_csv.USD ~ GDPData$Gross.domestic.product)
 summary(lmo)
+#1990-200
+cor(GDPData$Gross.domestic.product[21:64],
+    GoldRate.df$daily_rate_csv.USD[21:64])
+#2010-2020
+cor(GDPData$Gross.domestic.product[101:144],
+    GoldRate.df$daily_rate_csv.USD[101:144])
