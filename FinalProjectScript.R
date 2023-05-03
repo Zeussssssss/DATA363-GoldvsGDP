@@ -65,20 +65,20 @@ plot(
   GDPData$Year,
   GDPData$Gross.domestic.product,
   xlab = "Quarters (1985-2020)",
-  ylab = "Quarterly Gold Rate (USD)",
+  ylab = "Quarterly GDP (billion USD)",
   type = "l" ,
-  main = c("Quarterly Gold rates in the USA from 1985-2020")
+  main = c("Quarterly GDP in the USA from 1985-2020")
 )
 boxplot(
   GoldRate.df$daily_rate_csv.USD,
   ylab = "USD",
-  main = c("A Box Plot for USA's Quarterly Gold rates(for 1 oz.) (1985-2020)")
+  main = c("A Box Plot for USA's Quarterly Gold rates (for 1 oz.)")
 )
 plot(
   GoldRate.df$YEAR,
   GoldRate.df$daily_rate_csv.USD,
   xlab = "Quarters (1985-2020)",
-  ylab = "Quarterly GDP (biliion USD)",
+  ylab = "Quarterly Gold Rate (per ounce) in USD",
   type = "l" ,
   main = c("Quarterly Gold rates in the USA from 1985-2020")
 )
@@ -88,7 +88,7 @@ plot(
   GDPData$Gross.domestic.product,
   GoldRate.df$daily_rate_csv.USD,
   type = "l",
-  xlab = "Quarterly GDP rates (billion USD)",
+  xlab = "Quarterly GDP (billion USD)",
   ylab = "Quarterly Gold Rates (USD)",
   main = c("Gold Rate vs GDP (USA)")
 )
@@ -97,9 +97,12 @@ cor(GDPData$Gross.domestic.product,
 lmo <-
   lm(GoldRate.df$daily_rate_csv.USD ~ GDPData$Gross.domestic.product)
 summary(lmo)
-#1990-200
+#1990-2000
 cor(GDPData$Gross.domestic.product[21:64],
     GoldRate.df$daily_rate_csv.USD[21:64])
+#2000-2010
+cor(GDPData$Gross.domestic.product[61:104],
+    GoldRate.df$daily_rate_csv.USD[61:104])
 #2010-2020
 cor(GDPData$Gross.domestic.product[101:144],
     GoldRate.df$daily_rate_csv.USD[101:144])
